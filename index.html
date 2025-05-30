@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KristianSamuelTomaneng</title>
     <link rel="stylesheet" href="style.css">
+
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Cal+Sans&display=swap" rel="stylesheet">
+
 </head>
 <body>
     
@@ -47,13 +57,11 @@
                 </h1>
         </div>
 
-    <div class="bio-section">
-        <span>
-            I'AM KRISTIAN SAMUEL TOMANENG <br> AN ASPIRING<span style="color: #ee0754;"> SOFTWARE ENGINEER</span> 
-            WHO WANTS TO <br> CREATE WEB APPLICATION.    
-            
-        </span>
-    </div>
+    <div class="container">
+        <div>
+        <h2>Hello <span class="auto-type" id="spanAUTOTYPE"></span></h2>
+        </div>
+     </div>
 
     <div class="scroll-down"></div>
 
@@ -61,7 +69,41 @@
 
 </main>
 
+<!--About Me-->
+    <section class="about-section"></section>
+    
+    <h3 class="about-title">About Me</h3>
+
+    <div class="wrapper">
+            <div class="profile">
+                <img src="cartoon.png" alt="" class="toon">
+            </div>
+
+        <div class="intro">
+            <h5>Software Engineer</h5>
+            <p>
+                I am an aspiring Software Engineer with a creative mind and
+                love for beautiful and functional websites. I enjoy bringing
+                ideas to life through coding and design, and I'm always eager
+                to learn and explore new technologies to create amazing online experiences. 
+            </p>
+       
+            <button type="button" class="cv">MY CV</button>
+        </div>
+        </div>
+
 <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js"></script>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<script>
+    var typed = new Typed(".auto-type",{
+    strings: ["I'am Kristian Samuel Tomaneng", "I want to Create Web Applications", "There have a Nice Day"],
+    typeSpeed : 150,
+    backSpeed : 150,
+    loop : true
+})
+</script>
 
 <script src="script.js"></script>
 
