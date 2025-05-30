@@ -7,3 +7,17 @@ menuIcon.addEventListener('click', () => {
     navbar.classList.toggle('active');
     navbg.classList.toggle('active');
 })
+
+
+    var typed = new Typed(".auto-type",{
+    strings: ["I'am Kristian Samuel Tomaneng", "I want to Create Web Applications", "There have a Nice Day"],
+    typeSpeed : 150,
+    backSpeed : 150,
+    loop : true
+})
+
+    let button = document.querySelector(".button");
+
+    button.addEventListener("click" , ()=>{
+    button.classList.add("active");
+})
