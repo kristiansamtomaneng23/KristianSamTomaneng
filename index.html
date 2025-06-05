@@ -20,8 +20,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Lilita+One&family=Varela+Round&display=swap" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Cal+Sans&family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="star">
+        <video class="back-vid" loop autoplay muted plays-inline src="video/galaxy.mp4"></video>
+    </div>
     
     <header class="header">
         <img src="kst.jpg" alt="me" class="photo">
@@ -31,8 +35,8 @@
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Skill</a>
-            <a href="#">Job Experience</a>
-            <a href="#">Certificates</a>
+            <a href="#">Work Experience</a>
+            <a href="#">Trainings & Certificates</a>
             <a href="#">Contact</a>
         </nav>
     </header>
@@ -41,40 +45,26 @@
     <main>
         <div class="title-section">
             <h1>
-                <span>S</span>
-                <span>O</span>
-                <span>F</span>
-                <span>T</span>
-                <span>W</span>
-                <span>A</span>
-                <span>R</span>
-                <span>E</span>
-                <BR>
-                <span>E</span>
-                <span>N</span>
-                <span>G</span>
-                <span>I</span>
-                <span>N</span>
-                <span>E</span>
-                <span>E</span>
-                <span>R</span>
+                <span>DREAM</span>
+                <span>BIG</span>
+                
                 </h1>
         </div>
 
-    <div class="container">
-        <div>
-        <h2>Hello <span class="auto-type" id="spanAUTOTYPE"></span></h2>
+        <div class="container">
+            <div>
+            <h2>Hello <span class="auto-type" id="spanAUTOTYPE"></span></h2>
+            </div>
         </div>
-     </div>
 
-    <div class="scroll-down"></div>
+        <div class="scroll-down"></div>
 
     <spline-viewer class="picture3D" url="https://prod.spline.design/wItQox1j5Lbwv3QN/scene.splinecode"></spline-viewer>
 
-</main>
+    </main>
 
-<!--About Me-->
-    <section class="about-section"></section>
+    <!--About Me-->
+    <section class="about-section">
     
     <h3 class="about-title">About Me</h3>
 
@@ -93,18 +83,93 @@
             </p>
        
             <!--Button-->
-            <div class="button">
-                <div class="content">
-                <i class='bx  bx-arrow-down-square'  ></i> 
-                <span class="button-text">Download My CV</span>
+             <div>
+                <button class="button">
+                <span class="button_lg">
+                <span class="button_sl"></span>
+                <span class="button_text"><a href="CV/My Cv.pdf">CLICK HERE FOR MY CV</a>
+                </span> 
+                </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+    <!--My Skills-->
+    <section class="skill-section">
+        <h4 class="mySkill">MY SKILLS 💪</h4>
+        <div class="skillBox">
+                <img src="digital brain (2).png" class="skills-image" alt="skills-image">
+
+                <div class="designer">
+                    <h4 class="gradient">Designing<i class='bx  bx-laptop'  ></i> </h4>
+                     <p> I have basic knowledge in HTML,CSS, Javascript and media application like Adobe PhotoShop, 
+                        Adobe Illustrator, Adobe Lightroom, Adobe Premiere, and Adobe After Effects.
+                     </p>
+                </div>
+               
+
+                <div class="coder">
+                    <h4 class="gradient">Coding<i class='bx  bx-folder-code'></i> </h4>
+                    <p>I also have basic knowledge in Structured Query Language and 
+                        Java Programming Language. 
+                    </p>
+                </div>
+
+                   <div class="slider" reverse="true" style="
+                --width: 100px;
+                --height: 100px;
+                --quantity: 11;
+                ">
+                    <div class="list">
+                        <div class="item" style="--position: 1"><img src="logo/1.png" alt=""></div>
+                        <div class="item" style="--position: 2"><img src="logo/2.png" alt=""></div>
+                        <div class="item" style="--position: 3"><img src="logo/3.png" alt=""></div>
+                        <div class="item" style="--position: 4"><img src="logo/4.png" alt=""></div>
+                        <div class="item" style="--position: 5"><img src="logo/5.png" alt=""></div>
+                        <div class="item" style="--position: 6"><img src="logo/6.png" alt=""></div>
+                        <div class="item" style="--position: 7"><img src="logo/7.png" alt=""></div>
+                        <div class="item" style="--position: 8"><img src="logo/8.png" alt=""></div>
+                        <div class="item" style="--position: 9"><img src="logo/9.png" alt=""></div>
+                        <div class="item" style="--position: 10"><img src="logo/10.png" alt=""></div>
+                        <div class="item" style="--position: 11"><img src="logo/11.png" alt=""></div>
+                    </div>
                 </div>
             </div>
+    </section>
+
+    <div>
+        <h3 class="Experience">Work Experience</h3>
+    </div>
+
+    <div class="card-container">
+        <div class="flip-card" onclick="toggleFlip(this)">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="https://via.placeholder.com/300x400?text=Card+1" alt="Card 1 Image" />
+                </div>
+            <div class="flip-card-back">
+                <p>I became a freelance photographer and also videographer</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card" onclick="toggleFlip(this)">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300x400?text=Card+2" alt="Card 2 Image" />
+            </div>
+            <div class="flip-card-back">
+                <p>This is the back of Card 2. You can customize this too! 🎨</p>
+            </div>
+        </div>
+  </div>
+
+    <section class="training-section">
     
+    <h3 class="traincert">Trainings and  Certificate</h3>
 
-
-           <!-- <button type="button" class="cv">MY CV</button>-->
-        </div>
-        </div>
+    </section>
 
 <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js"></script>
 

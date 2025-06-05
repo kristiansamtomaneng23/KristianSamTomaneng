@@ -1,10 +1,40 @@
 body{
 background: #0f0c29;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 color: white;
 padding: 3rem;
 width: 100%;
+}
+
+.star{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back-vid{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  mix-blend-mode: overlay;
+  opacity: 65%;
+}
+
+@media (max-aspect-ratio: 16/9){
+  .back-vid{
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media (min-aspect-ratio:16/9){
+  .back-vid{
+    width: 100%;
+    height: auto;
+  }
 }
 
 *{
@@ -58,12 +88,12 @@ width: 100%;
 
 .navbar a{
     font-family: "Lilita One", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
-    color: #e9fa02;
+    color: #f113f1;
     -webkit-text-stroke-color: #0f0564;
     -webkit-text-stroke-width: 0.5px;
-    font-size: 19px;
+    font-size: 22px;
     text-decoration: none;
     margin-left: 30px;
     transition: .3s;
@@ -84,7 +114,7 @@ main {
 
 h1{
     text-align: center;
-    font-size: 6rem;
+    font-size: 7rem;
     font-weight: 900;
     letter-spacing: 1px;
     line-height: 1;
@@ -170,10 +200,11 @@ h1{
 
 .picture3D {
     position: absolute;
-    top: 25%;
+    top: 10%;
     left: -15%;
     width: 130%;
-    height: 100%;  
+    height: 100%; 
+    opacity: 90%; 
 }
 
 .about-section {
@@ -245,69 +276,255 @@ h1{
     text-indent: 20px;
     margin-bottom: 1rem;
     margin-left: 2rem;
-    position:static;
+    position:relative;
     padding: 1em 2em;
-    font-size: 20px;
+    font-size: 25px;
     justify-content: center;
-    background-color: #fa0505;
-    animation: glow 1s infinite alternate;
-    border-radius: 20px;
+    background-image: linear-gradient(rgb(243, 164, 18),rgb(233, 108, 5));
+    animation: glow2 1s infinite alternate;
+    border-radius: 10px;
 }
 
-.button{
+@keyframes glow2 {
+  from {
+    box-shadow: 0 0 10px -10px #f10317;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #f30775;
+  }
+}
+
+
+button {
+  margin-left: 2rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: #0f1923;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+  transition: all .15s ease;
+}
+
+.button::before,
+.button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid #7D8082;
+  transition: all .15s ease;
+}
+
+.button::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.button::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.button:active,
+.button:focus {
+  outline: none;
+}
+
+.button:active::before,
+.button:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.button:active::before {
+  top: 3px;
+}
+
+.button:active::after {
+  bottom: 3px;
+}
+
+.button_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0f1923;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
+}
+
+.button_lg::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #0f1923;
+  transition: all .2s ease;
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: #ff4655;
+  transform: skew(-15deg);
+  transition: all .2s ease;
+}
+
+.button_text {
+  position: relative;
+}
+
+.button:hover {
+  color: #0f1923;
+}
+
+.button:hover .button_sl {
+  width: calc(100% + 15px);
+}
+
+.button:hover .button_lg::after {
+  background-color: #fff;
+}
+
+/*Skill-Section*/
+.skill-section{
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.skillBox{
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.skills-image{
+  width: 70%;
+  mix-blend-mode: lighten;
+  opacity: 0.9;
+}
+
+.designer{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  top: 25%;
+  left: 5%;
+  max-width: 300px;
+}
+
+.coder{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  top: 25%;
+  right: 5%;
+  max-width: 300px;
+}
+
+.skillBox h4{
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.mySkill{
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-size: 50px;
+}
+
+.skillBox p{
+  margin-top: 1.2rem;
+  line-height: 23px;
+}
+
+/*slider*/
+.slider{
     position: absolute;
-    transform: translate(40%,20%);
-    height: 60px;
-    width: 200px;
-    margin-left: 2rem;
-    box-shadow: 0 5px 10px rgba(252, 248, 248, 0.418);
-    padding: 20px 15px;
-    background-image: linear-gradient(rgb(133, 6, 206), rgb(69, 4, 189));
-    border-radius: 55px;
-    text-align: center;
+    bottom: 5%;
+    right: 20%;
+    width: 60%;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+    );
+    mix-blend-mode:difference;
+    opacity: 0.7;
 }
-
-.button.active{
-    height: 10px;
-    width: 50px;
+.slider .list{
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
 }
-
-.button::before{
-    content: '';
+.slider .list .item{
+    width: var(--width);
+    height: var(--height);
     position: absolute;
-    top: 0;
-    left: -100%;
-    height: 60px;
-    width: 200px;
-    box-shadow: 0 5px 10px rgba(252, 248, 248, 0.418);
-    background-image: linear-gradient(rgb(133, 6, 206), rgb(69, 4, 189));
-    bottom: 3.5px;
-    border-radius: 55px;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    transition: filter 0.5s;
+    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
 }
-
-
-
-.button .content{
-   height: 100% ;
-   width: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center; 
+.slider .list .item img{
+    width: 100%;
 }
-
-.content i,
-.content .button-text{
-    font-family: "Varela Round", sans-serif;
-    font-weight: 400;
-    font-size: 25px; 
-    color: #fff;
+@keyframes autoRun{
+    from{
+        left: 100%;
+    }to{
+        left: calc(var(--width) * -1);
+    }
 }
-.content .button-text{
-    font-size: 17px;
+.slider:hover .item{
+    animation-play-state: paused!important;
+    filter: grayscale(1);
 }
-
-
-
+.slider .item:hover{
+    filter: grayscale(0);
+}
 
 
 #menu-icon{
@@ -365,4 +582,109 @@ h1{
         display: block;
     }
 
+}
+
+.Experience{
+    margin-top: 10rem;
+    text-align: center;
+    font-size: 5rem;
+    background-image: linear-gradient(rgb(133,133,133), rgb(255,255,255));
+    color: transparent;
+    background-clip: text;
+}
+
+.card-container {
+      display: flex;
+      margin-left: 17rem;
+      margin-top: 4rem;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 700px;
+      width: 100%;
+    }
+
+.flip-card {
+      background-color: transparent;
+      width: 100%;
+      max-width: 300px;
+      aspect-ratio: 3 / 4;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+.flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s ease;
+      transform-style: preserve-3d;
+    }
+
+    .flipped {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .flip-card-front {
+      background-color: #fff;
+    }
+
+    .flip-card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .flip-card-back {
+      background-color: #292d3e;
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .fliphead{
+      display: flex;
+      text-align: center;
+      font-size: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 700px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+.training-section {
+    height: 55%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.traincert{
+  margin-top: 10rem;
+  text-align: center;
+  font-size: 5rem;
+  background-image: linear-gradient(rgb(133,133,133), rgb(255,255,255));
+  color: transparent;
+  background-clip: text;
 }

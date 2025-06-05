@@ -16,8 +16,6 @@ menuIcon.addEventListener('click', () => {
     loop : true
 })
 
-    let button = document.querySelector(".button");
-
-    button.addEventListener("click" , ()=>{
-    button.classList.add("active");
-})
+function toggleFlip(card) {
+    card.querySelector('.flip-card-inner').classList.toggle('flipped');
+  }
