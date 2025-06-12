@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body{
 background: #0f0c29;  /* fallback for old browsers */
 color: white;
@@ -20,7 +24,7 @@ width: 100%;
   bottom: 0;
   z-index: -1;
   mix-blend-mode: overlay;
-  opacity: 65%;
+  opacity: 0.65;
 }
 
 @media (max-aspect-ratio: 16/9){
@@ -57,6 +61,12 @@ width: 100%;
     backdrop-filter: blur(10px);
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
     z-index: 100;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between logo and menu icon */
 }
 
 .header::before {
@@ -100,8 +110,6 @@ width: 100%;
 }
 
 main {
-    overflow: hidden;
-    display: flex;
     flex:1;
     flex-direction: column;
     justify-content: space-between;
@@ -112,37 +120,74 @@ main {
     margin-top: 2rem;
 }
 
-h1{
-    text-align: center;
-    font-size: 7rem;
-    font-weight: 900;
-    letter-spacing: 1px;
-    line-height: 1;
-    background-image: linear-gradient(rgb(11, 239, 247),rgb(255,255,255));
-    color: transparent;
-    background-clip: text;
-}
-
-/*.bio-section{
-    margin-top: 23rem;
-    text-align: center; 
-    font-size: 20px;
-    line-height: 1.6;
-    bottom: 100px;
-    width: 100%;
-    height: 100%;
-    font-size: 2 rem;
-}*/
-
 .container{
-    margin-top: 23rem;
+    margin-top: 2rem;
     text-align: center; 
     font-size: 20px;
     line-height: 1.6;
     bottom: 10px;
     width: 100%;
     height: 100%;
-    font-size: 40px;  
+    font-size: 40px; 
+}
+
+
+/*Carousel*/
+.carousel-360 {
+  perspective: 1200px;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel-ring {
+  position: relative;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  animation: spinY 20s linear infinite;
+}
+
+.carousel-ring img {
+  position: absolute;
+  width: 270px;              /* 10% smaller width */
+  height: 360px;             /* 10% smaller height */
+  object-fit: cover;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(18rem); /* Increased depth */
+
+  /* 3D Border Styling */
+  padding: 8px;
+  border: 12px solid #dcdcdc;
+  border-radius: 16px;
+  background-color: #f9f9f9;
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Adjust angle for each image (5 total shown) */
+.carousel-ring img:nth-child(1) { --angle: 0deg; }
+.carousel-ring img:nth-child(2) { --angle: 72deg; }
+.carousel-ring img:nth-child(3) { --angle: 144deg; }
+.carousel-ring img:nth-child(4) { --angle: 216deg; }
+.carousel-ring img:nth-child(5) { --angle: 288deg; }
+
+@keyframes spinY {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
 }
 
 .h2{
@@ -154,58 +199,8 @@ h1{
 }
 
 
-.scroll-down {
-    height: 5rem;
-    width: 2rem;
-    position: absolute;
-    right: 2%;
-    bottom: 5%;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 255,255, 0.5);
-}
 
-.scroll-down::before,
-.scroll-down::after{
-    content: "";
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    height: 10px;
-    width: 10px;
-    transform: translate(-50%, -100%) rotate(45deg);
-    border: 2px solid lightgray;
-    border-top: transparent;
-    border-left: transparent;
-    animation: scroll-down 3s ease-in-out infinite;  
-}
-
-.scroll-down::before{
-    top:30%;
-    animation-delay: 0.8s;
-}
-
-@keyframes scroll-down{
-    0% {
-        opacity: 0;
-    }
-    30%,60% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        top: 90%;
-    }
-}
-
-.picture3D {
-    position: absolute;
-    top: 10%;
-    left: -15%;
-    width: 130%;
-    height: 100%; 
-    opacity: 90%; 
-}
+/*about*/
 
 .about-section {
     height: 55%;
@@ -227,7 +222,6 @@ h1{
 
 
 .toon{
-    display: absolute;
     margin-top: 4rem;
     margin-bottom: 10px;
     width: 100%;
@@ -399,6 +393,10 @@ button {
   transition: all .2s ease;
 }
 
+.cvPdf{
+  text-decoration: none;
+}
+
 .button_text {
   position: relative;
 }
@@ -436,7 +434,7 @@ button {
 .skills-image{
   width: 70%;
   mix-blend-mode: lighten;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .designer{
@@ -474,10 +472,27 @@ button {
 .skillBox p{
   margin-top: 1.2rem;
   line-height: 23px;
+  margin-bottom: 0;
+}
+
+#skills {
+  padding-bottom: 20px; /* or less */
+}
+
+#work, .experience {
+  margin-top: 0;
+  padding-top: 20px; /* adjust as needed */
+}
+
+.skillpara{
+  font-family: "Varela Round", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
 }
 
 /*slider*/
 .slider{
+    margin-top: 0;
     position: absolute;
     bottom: 5%;
     right: 20%;
@@ -511,6 +526,7 @@ button {
 .slider .list .item img{
     width: 100%;
 }
+
 @keyframes autoRun{
     from{
         left: 100%;
@@ -543,7 +559,7 @@ button {
 
 @media (max-width: 768px){
     #menu-icon{
-        display: block;
+        display:relative;
     }
 
     .navbar {
@@ -567,10 +583,10 @@ button {
 
     .nav-bg{
         position: fixed;
-        top: 11.8%;
+        top: 1.8%;
         left: 0;
         width: 100%;
-        height: 295px;
+        height: 320px;
         background: rgba(255, 255, 255, 0.1);
         border-bottom: 2px solid rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(10px);
@@ -584,6 +600,23 @@ button {
 
 }
 
+.work-section .card-container {
+  display: flex;
+  justify-content: center;   /* Center horizontally */
+  flex-wrap: wrap;           /* Allow wrapping on smaller screens */
+  gap: 1.5rem;               /* Optional: spacing between cards */
+  padding: 2rem 1rem;        /* Optional: padding */
+}
+
+.work-section {
+  display: flex;
+  justify-content: center;
+}
+
+.work-Section h2 {
+  text-align: center;
+}
+
 .Experience{
     margin-top: 10rem;
     text-align: center;
@@ -594,15 +627,14 @@ button {
 }
 
 .card-container {
-      display: flex;
-      margin-left: 17rem;
-      margin-top: 4rem;
-      gap: 40px;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: 700px;
-      width: 100%;
-    }
+  display: flex;
+  margin: 4rem auto 0 auto; /* centers horizontally with auto margins */
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 700px;
+  width: 100%;
+}
 
 .flip-card {
       background-color: transparent;
@@ -664,27 +696,192 @@ button {
       align-items: center;
     }
 
-    @media (max-width: 700px) {
-      .card-container {
-        flex-direction: column;
-        align-items: center;
+ .animated-text {
+     
+      margin-top: 4rem;
+      font-size: 7.8rem;
+      font-weight: 900;
+      gap: 0.1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text{
+      font-family: "Bowlby One SC", sans-serif;
+      font-weight: 400;
+    }
+
+    .animated-text span {
+      display: inline-block;
+      background: linear-gradient(270deg, #ff0080, #7928ca, #2afadf);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientAnimation 4s ease infinite, bounce 2s ease-in-out infinite;
+    }
+
+    /* Staggered bounce delay for each letter */
+    .animated-text span:nth-child(1) { animation-delay: 0s, 0s; }
+    .animated-text span:nth-child(2) { animation-delay: 0s, 0.1s; }
+    .animated-text span:nth-child(3) { animation-delay: 0s, 0.2s; }
+    .animated-text span:nth-child(4) { animation-delay: 0s, 0.3s; }
+    .animated-text span:nth-child(5) { animation-delay: 0s, 0.4s; }
+    .animated-text span:nth-child(6) { animation-delay: 0s, 0.5s; } /* space */
+    .animated-text span:nth-child(7) { animation-delay: 0s, 0.6s; }
+    .animated-text span:nth-child(8) { animation-delay: 0s, 0.7s; }
+    .animated-text span:nth-child(9) { animation-delay: 0s, 0.8s; }
+
+    @keyframes gradientAnimation {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
       }
     }
 
-.training-section {
-    height: 55%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-30px);
+      }
+    }
+
+.section-title{
+    margin-top: 10rem;
+    text-align: center;
+    font-size: 5rem;
+    background-image: linear-gradient(rgb(133,133,133), rgb(255,255,255));
+    color: transparent;
+    background-clip: text
 }
 
-.traincert{
-  margin-top: 10rem;
-  text-align: center;
-  font-size: 5rem;
-  background-image: linear-gradient(rgb(133,133,133), rgb(255,255,255));
-  color: transparent;
-  background-clip: text;
+.contact-section{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+    position: relative;
 }
+
+.contact-section h1{
+    position: absolute;
+    top: 10%;
+    left: 40%;
+}
+
+.social-box {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.social-box a{
+    color: lightgray;
+    text-decoration: none;
+    font-size: 20px;
+    text-wrap: nowrap;
+}
+
+.social-box i{
+    color: #7668ff;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.social-icons a i{
+    color: white;
+    margin-top: 40px;
+}
+
+.contact-box p{
+    max-width: 400px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    font-size: 20px;
+} 
+
+.contact-box input{
+    padding: 7.5px 30px;
+    background-color: lightgray;
+    width: 80%;
+    height: 25px;
+    border: none;
+    outline : none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.contact-box button{
+    margin-top: 30px;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 10px;
+    border: 1px solid #72a1de81;
+    background-color: #2200493d;
+    box-shadow: 0 0 5px #72a1de81;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-box button:hover{
+    opacity: 0.8;
+    box-shadow: 0 0 15px #72a1de81;
+}
+
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+    position: relative;
+  }
+
+  .about-section{
+    margin-top: 2rem;
+  }
+
+  .section-title{
+  margin-top: 10rem;    
+  margin-bottom: 2rem;
+  }
+
+  .contact-section{
+    margin-top: 0;
+  }
+
+  .animated-text{
+    font-size: 100px;
+  }
+
+  .card-container{
+    margin-left: 0;
+  }
+
+  .coder{
+    padding-left: 4rem;
+  }
+  .skills-image{
+    width: 120;
+    height: 120;
+  }
+
+  .slider{
+    margin-bottom: 1rem;
+
+  main{
+    margin-bottom: 0;
+    height: 0;
+    }
+  }
+
+  .Experience{
+    margin-top: 4rem;
+  }
+
+}
+
+

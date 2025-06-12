@@ -1,181 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KristianSamuelTomaneng</title>
+<head>
+    <title>KristianSamuelTomanengProfile</title>
     <link rel="stylesheet" href="style.css">
-
-    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Cal+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Lilita+One&family=Varela+Round&display=swap"
+        rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Lilita+One&family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Titan+One&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Cal+Sans&family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="star">
-        <video class="back-vid" loop autoplay muted plays-inline src="video/galaxy.mp4"></video>
+        <video class="back-vid" loop autoplay muted playsinline src="video/galaxy.mp4"></video>
     </div>
-    
-    <header class="header">
-        <img src="kst.jpg" alt="me" class="photo">
-        <i class='bx  bx-menu' id="menu-icon"></i> 
-    
-        <nav class="navbar">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Skill</a>
-            <a href="#">Work Experience</a>
-            <a href="#">Trainings & Certificates</a>
-            <a href="#">Contact</a>
-        </nav>
+
+    <header class="header" data-aos="fade-down-right" data-aos-delay="100" data-aos-duration="2000">
+        <div class="header-left">
+            <img src="kst.jpg" alt="me" class="photo">
+            <i class='bx  bx-menu' id="menu-icon"></i>
+
+            <nav class="navbar">
+                <a href="#Home">Home</a>
+                <a href="#About">About</a>
+                <a href="#Skill">Skill</a>
+                <a href="#Work">Work Experience</a>
+                <a href="#Contact">Contact</a>
+            </nav>
+        </div>
     </header>
     <div class="nav-bg"></div>
-    
-    <main>
-        <div class="title-section">
-            <h1>
-                <span>DREAM</span>
-                <span>BIG</span>
-                
-                </h1>
+
+    <main id="Home">
+        <div class="animated-text" data-aos="zoom-in-down" data-aos-delay="400" data-aos-duration="2000">
+            <span class="text">D</span>
+            <span class="text">r</span>
+            <span class="text">e</span>
+            <span class="text">a</span>
+            <span class="text">m</span>
+            <span> </span>
+            <span class="text">B</span>
+            <span class="text">i</span>
+            <span class="text">g</span>
         </div>
 
-        <div class="container">
-            <div>
-            <h2>Hello <span class="auto-type" id="spanAUTOTYPE"></span></h2>
+        <div class="carousel-360" data-aos="fade-up" data-aos-delay="600" data-aos-easing="linear" data-aos-duration="1500">
+            <div class="carousel-ring">
+                <img src="photos/1.png" alt="Image 1">
+                <img src="photos/2.jpg" alt="Image 2">
+                <img src="photos/3.jpg" alt="Image 3">
+                <img src="photos/4.jpg" alt="Image 4">
+                <img src="photos/5.jpeg" alt="Image 5">
             </div>
         </div>
 
-        <div class="scroll-down"></div>
 
-    <spline-viewer class="picture3D" url="https://prod.spline.design/wItQox1j5Lbwv3QN/scene.splinecode"></spline-viewer>
+
+        <div class="container" data-aos="zoom-in-up" data-aos-delay="400" data-aos-duration="1500">
+            <div>
+                <h2>Hello <span class="auto-type" id="spanAUTOTYPE"></span></h2>
+            </div>
+        </div>
+
 
     </main>
 
     <!--About Me-->
-    <section class="about-section">
-    
-    <h3 class="about-title">About Me</h3>
+    <section class="about-section" id="About">
 
-    <div class="wrapper">
-            <div class="profile">
-                <img src="cartoon.png" alt="" class="toon">
+        <h3 class="about-title" data-aos="flip-up" data-aos-duration="1500">About Me</h3>
+
+        <div class="wrapper">
+            <div class="profile" data-aos="fade-right" data-aos-duration="2000">
+                <img src="cartoon.png" alt="cartoon" class="toon">
             </div>
 
-        <div class="intro">
-            <h5>Software Engineer</h5>
-            <p>
-                I am an aspiring Software Engineer with a creative mind and
-                love for beautiful and functional websites. I enjoy bringing
-                ideas to life through coding and design, and I'm always eager
-                to learn and explore new technologies to create amazing online experiences. 
-            </p>
-       
-            <!--Button-->
-             <div>
-                <button class="button">
-                <span class="button_lg">
-                <span class="button_sl"></span>
-                <span class="button_text"><a href="CV/My Cv.pdf">CLICK HERE FOR MY CV</a>
-                </span> 
-                </span>
-                </button>
+            <div class="intro" data-aos="zoom-in-down" data-aos-delay="400" data-aos-duration="2000">
+                <h5>Hello There!</h5>
+                <p>
+                    I am an aspiring Software Engineer with a creative mind and
+                    love for beautiful and functional websites. I enjoy bringing
+                    ideas to life through coding and design, and I'm always eager
+                    to learn and explore new technologies to create amazing online experiences.
+                </p>
+
+                <!--Button-->
+                <div>
+                    <a href="CV/My Cv.pdf" class="cvPdf">
+                        <button class="button">
+                            <span class="button_lg">
+                                <span class="button_sl"></span>
+                                <span class="button_text">CLICK HERE FOR MY CV
+                                </span>
+                            </span>
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     <!--My Skills-->
-    <section class="skill-section">
-        <h4 class="mySkill">MY SKILLS 💪</h4>
+    <section class="skill-section" id="Skill">
+        <h4 class="mySkill" data-aos="flip-up" data-aos-delay="200" data-aos-duration="1500">MY SKILLS 💪</h4>
         <div class="skillBox">
-                <img src="digital brain (2).png" class="skills-image" alt="skills-image">
+            <img src="digital brain (2).png" class="skills-image" alt="skills-image" data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="1500">
 
-                <div class="designer">
-                    <h4 class="gradient">Designing<i class='bx  bx-laptop'  ></i> </h4>
-                     <p> I have basic knowledge in HTML,CSS, Javascript and media application like Adobe PhotoShop, 
-                        Adobe Illustrator, Adobe Lightroom, Adobe Premiere, and Adobe After Effects.
-                     </p>
-                </div>
-               
+            <div class="designer" data-aos="zoom-in-right" data-aos-delay="300" data-aos-duration="1500">
+                <h4 class="gradient">Design<i class='bx  bx-laptop'></i> </h4>
+                <p class="skillpara"> I have basic knowledge in HTML,CSS, Javascript and media application like Adobe
+                    PhotoShop,
+                    Adobe Illustrator, Adobe Lightroom, Adobe Premiere, and Adobe After Effects.
+                </p>
+            </div>
 
-                <div class="coder">
-                    <h4 class="gradient">Coding<i class='bx  bx-folder-code'></i> </h4>
-                    <p>I also have basic knowledge in Structured Query Language and 
-                        Java Programming Language. 
-                    </p>
-                </div>
 
-                   <div class="slider" reverse="true" style="
+            <div class="coder" data-aos="zoom-in-left" data-aos-delay="300" data-aos-duration="1500">
+                <h4 class="gradient">Code<i class='bx bx-code'></i></h4>
+                <p class="skillpara">I also have basic knowledge in Structured Query Language and
+                    Java Programming Language.
+                </p>
+            </div>
+
+            <div class="slider" reverse="true" style="
                 --width: 100px;
                 --height: 100px;
                 --quantity: 11;
-                ">
-                    <div class="list">
-                        <div class="item" style="--position: 1"><img src="logo/1.png" alt=""></div>
-                        <div class="item" style="--position: 2"><img src="logo/2.png" alt=""></div>
-                        <div class="item" style="--position: 3"><img src="logo/3.png" alt=""></div>
-                        <div class="item" style="--position: 4"><img src="logo/4.png" alt=""></div>
-                        <div class="item" style="--position: 5"><img src="logo/5.png" alt=""></div>
-                        <div class="item" style="--position: 6"><img src="logo/6.png" alt=""></div>
-                        <div class="item" style="--position: 7"><img src="logo/7.png" alt=""></div>
-                        <div class="item" style="--position: 8"><img src="logo/8.png" alt=""></div>
-                        <div class="item" style="--position: 9"><img src="logo/9.png" alt=""></div>
-                        <div class="item" style="--position: 10"><img src="logo/10.png" alt=""></div>
-                        <div class="item" style="--position: 11"><img src="logo/11.png" alt=""></div>
+                " data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">
+                <div class="list">
+                    <div class="item" style="--position: 1"><img src="logo/1.png" alt="photo1"></div>
+                    <div class="item" style="--position: 2"><img src="logo/2.png" alt="photo2"></div>
+                    <div class="item" style="--position: 3"><img src="logo/3.png" alt="photo3"></div>
+                    <div class="item" style="--position: 4"><img src="logo/4.png" alt="photo4"></div>
+                    <div class="item" style="--position: 5"><img src="logo/5.png" alt="photo5"></div>
+                    <div class="item" style="--position: 6"><img src="logo/6.png" alt="photo6"></div>
+                    <div class="item" style="--position: 7"><img src="logo/7.png" alt="photo7"></div>
+                    <div class="item" style="--position: 8"><img src="logo/8.png" alt="photo8"></div>
+                    <div class="item" style="--position: 9"><img src="logo/9.png" alt="photo9"></div>
+                    <div class="item" style="--position: 10"><img src="logo/10.png" alt="photo10"></div>
+                    <div class="item" style="--position: 11"><img src="logo/11.png" alt="photo11"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="work-Section" id="Work">
+        <div>
+            <h3 class="Experience" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1500">Work Experience</h3>
+        </div>
+
+        <div class="card-container">
+
+            <div class="flip-card" onclick="toggleFlip(this)" data-aos="fade-right" data-aos-delay="350" data-aos-duration="1500">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://via.placeholder.com/300x400?text=Card+1" alt="Card 1 Image" />
+                    </div>
+                    <div class="flip-card-back">
+                        <p>After Graduation I became a freelance photographer and also videographer for almost 2 years. 
+                            I develop creativity in editing photos and videos. And also i learned different applications</p>
                     </div>
                 </div>
             </div>
-    </section>
 
-    <div>
-        <h3 class="Experience">Work Experience</h3>
-    </div>
-
-    <div class="card-container">
-        <div class="flip-card" onclick="toggleFlip(this)">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="https://via.placeholder.com/300x400?text=Card+1" alt="Card 1 Image" />
+            <div class="flip-card" onclick="toggleFlip(this)" data-aos="fade-left" data-aos-delay="350" data-aos-duration="1500">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://via.placeholder.com/300x400?text=Card+2" alt="Card 2 Image" />
+                    </div>
+                    <div class="flip-card-back">
+                        <p>June 2018 I applied and hired as Data Encoder at LGU Santo Niño,Cagayan and I was assigned in the Civil Registrar Office wherein I organized of Birth,Marriage, Death Certificates of individuals. And then 
+                            Covid 19 pandemic came I was reassign in the Municipal Health Office to become Health Program Officer. Wherein iam responsible for
+                            inputing personal information of asymptomatic or symptomatic patient that being swab. And i also prepared payrolls, 
+                            Disbursement vouchers, and Medical Certificates.
+                        </p>
+                    </div>
                 </div>
-            <div class="flip-card-back">
-                <p>I became a freelance photographer and also videographer</p>
             </div>
         </div>
-    </div>
+    </section>
+    <h1 class="section-title" id="Contact" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1500">Let's talk</h1>
 
-    <div class="flip-card" onclick="toggleFlip(this)">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <img src="https://via.placeholder.com/300x400?text=Card+2" alt="Card 2 Image" />
-            </div>
-            <div class="flip-card-back">
-                <p>This is the back of Card 2. You can customize this too! 🎨</p>
+    <section class="contact-section " data-aos="flip-up" data-aos-delay="200" data-aos-duration="1500">
+        <div class="social-box">
+            <a href="video/My number.mp4"><i class='bx bxs-phone'></i>+639162150763</a>
+            <a href="https://github.com/kristiansamtomaneng23" target="_blank"><i class='bx bxl-github'></i>My
+                Github</a>
+            <a href="https://linkedin.com/in/kristian-sam-tomaneng-4664a936a" target="_blank"><i
+                    class='bx bxl-linkedin-square'></i> My LinkedIn Profile</a>
+            <div class="social-icons">
+                <a href="https://www.instagram.com"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.tiktok.com/@totosam23"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.facebook.com/kekeke23/"><i class='bx bxl-facebook-circle'></i></a>
             </div>
         </div>
-  </div>
 
-    <section class="training-section">
-    
-    <h3 class="traincert">Trainings and  Certificate</h3>
+        <form action="https://api.web3forms.com/submit" method="post">
+            <div class="contact-box">
+                <p>Whether you're looking for entry level Software Engineer to improve your existing platform. I'm here
+                    to help.</p>
+                <input type="hidden" name="access_key" value="2410a3a5-3ac1-4f32-a9c8-95cba18622b3">
 
+                <p>Full Name</p>
+                <input placeholder="Your Full name" name="Full Name" type="name" required>
+
+                <p>Email Address</p>
+                <input placeholder="Your Email" name="Email" type="email" required>
+
+                <p>Your Message</p>
+                <input placeholder="Share your thoughts..." class="input-message" type="message" name="message"
+                    required>
+
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+                <button>Send Message <i class='bx bx-mail-send'></i></button>
+                <button type="reset">Clear <i class='bx bx-reset'></i></button>
+
+            </div>
+        </form>
     </section>
 
-<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js"></script>
-
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
-<script src="script.js"></script>
-
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
