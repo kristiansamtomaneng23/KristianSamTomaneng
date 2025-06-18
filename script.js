@@ -24,7 +24,7 @@ document.addEventListener('click', (e) => {
 });
 
     var typed = new Typed(".auto-type",{
-    strings: ["I'am Kristian Samuel Tomaneng", "I want to Create Web Applications", "There have a Nice Day"],
+    strings: ["I'am Kristian Samuel Tomaneng", "my passion is creating web application", "There have a Nice Day"],
     typeSpeed : 150,
     backSpeed : 150,
     loop : true
